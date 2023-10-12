@@ -1,0 +1,34 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char const *argv[])
+{
+    volatile int modified;
+    char buffer[64];
+    char *varaible;
+
+    varaible = getenv("GREENIE");
+
+    if (varaible == NULL)
+    {
+        errx(1, "por favor defina a variável de ambiente GREENIE\n");
+    }
+
+    modified = 0;
+    strcpy(buffer, varaible);
+
+    if (modified == 0x61626364)
+    {
+        printf("você modificou corretamente a variável\n");
+    }
+    else
+    {
+        printf("tente de novo, você tem 0x%08x\n", modified);
+    }
+
+    return 0;
+}
+// cria variavel de anbiente
+// export GREENIE="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadcba"
