@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+
+void win()
+{
+    printf("fluxo de código alterado com sucessozn");
+}
+
+int main(int argc, char const *argv[])
+{
+    char buffer[64];
+
+    gets(buffer);
+}
