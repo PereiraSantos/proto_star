@@ -5,7 +5,7 @@
 
 void win()
 {
-    printf("fluxo de código alterado com sucessozn");
+    printf("fluxo de código alterado com sucesso\n");
 }
 
 int main(int argc, char const *argv[])
